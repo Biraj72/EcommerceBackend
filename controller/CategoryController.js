@@ -76,6 +76,19 @@ exports.deleteCategory= async(req,res)=>{
     }catch(err){
         return res.status(400).json({error:err.message,detail:"Invalid Id"});
     }
-   
+
+};
+
+exports.testCategory= async(req,res)=>{     
+    //req le limncha, res le repsone dincha  //unique id to identify category, change garne body ma
+    try{
+        let category=await Category.findByIdAndDelete(req.params.id);
+        if(!category){
+            res.status(404).json({error:"Category not found"});
+        }
+        return res.status(200).json({category,success:"Category Deleted"})
+    }catch(err){
+        return res.status(400).json({error:err.message,detail:"Invalid Id"});
+    }
 
 };
