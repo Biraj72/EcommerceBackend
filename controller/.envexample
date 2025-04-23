@@ -1,0 +1,2 @@
+PORT=7000
+DATABASE=mongodb+srv://username:pw@cluster0.v6as8.mongodb.net/csit?retryWrites=true&w=majority&appName=Cluster0
